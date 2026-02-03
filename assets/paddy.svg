@@ -1,0 +1,9 @@
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="80" rx="18" fill="#e3f2fd"/>
+  <ellipse cx="60" cy="70" rx="40" ry="10" fill="#a5d6a7"/>
+  <path d="M40 70 Q60 30 80 70" stroke="#388e3c" stroke-width="6" fill="none"/>
+  <rect x="55" y="40" width="10" height="30" rx="4" fill="#ffd600"/>
+  <ellipse cx="60" cy="40" rx="18" ry="10" fill="#fffde7"/>
+  <ellipse cx="60" cy="40" rx="10" ry="6" fill="#a5d6a7"/>
+  <text x="60" y="78" text-anchor="middle" font-size="14" fill="#388e3c" font-family="Segoe UI, Arial, sans-serif">Paddy</text>
+</svg>

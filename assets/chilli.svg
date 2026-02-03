@@ -1,0 +1,10 @@
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="80" rx="18" fill="#fff3e0"/>
+  <ellipse cx="60" cy="70" rx="40" ry="10" fill="#ffcc80"/>
+  <path d="M60 70 Q70 40 100 60" stroke="#d84315" stroke-width="6" fill="none"/>
+  <ellipse cx="100" cy="60" rx="10" ry="6" fill="#ff7043"/>
+  <ellipse cx="100" cy="60" rx="5" ry="3" fill="#fff"/>
+  <ellipse cx="60" cy="40" rx="18" ry="10" fill="#fffde7"/>
+  <ellipse cx="60" cy="40" rx="10" ry="6" fill="#ff7043"/>
+  <text x="60" y="78" text-anchor="middle" font-size="14" fill="#d84315" font-family="Segoe UI, Arial, sans-serif">Chilli</text>
+</svg>

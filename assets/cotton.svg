@@ -1,0 +1,9 @@
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="80" rx="18" fill="#f3e5f5"/>
+  <ellipse cx="60" cy="70" rx="40" ry="10" fill="#ce93d8"/>
+  <ellipse cx="60" cy="40" rx="18" ry="10" fill="#fffde7"/>
+  <ellipse cx="60" cy="40" rx="10" ry="6" fill="#ce93d8"/>
+  <rect x="55" y="30" width="10" height="20" rx="4" fill="#fff"/>
+  <ellipse cx="60" cy="30" rx="8" ry="4" fill="#ce93d8"/>
+  <text x="60" y="78" text-anchor="middle" font-size="14" fill="#6a1b9a" font-family="Segoe UI, Arial, sans-serif">Cotton</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="80" rx="18" fill="#e0f7fa"/>
+  <ellipse cx="60" cy="70" rx="40" ry="10" fill="#b2ebf2"/>
+  <rect x="30" y="30" width="60" height="20" rx="8" fill="#fff"/>
+  <rect x="40" y="40" width="40" height="10" rx="5" fill="#b2ebf2"/>
+  <text x="60" y="78" text-anchor="middle" font-size="14" fill="#00838f" font-family="Segoe UI, Arial, sans-serif">Tech</text>
+</svg>
