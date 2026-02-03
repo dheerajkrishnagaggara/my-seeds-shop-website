@@ -1,0 +1,7 @@
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="80" rx="18" fill="#e8f5e9"/>
+  <ellipse cx="60" cy="60" rx="40" ry="12" fill="#ffd600"/>
+  <path d="M60 68C45 68 38 52 38 36C38 20 60 8 60 8C60 8 82 20 82 36C82 52 75 68 60 68Z" fill="#fff" stroke="#388e3c" stroke-width="2"/>
+  <circle cx="60" cy="36" r="6" fill="#388e3c"/>
+  <text x="60" y="78" text-anchor="middle" font-size="14" fill="#388e3c" font-family="Segoe UI, Arial, sans-serif">Seeds</text>
+</svg>

@@ -1,3 +1,60 @@
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.10);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.hero-text {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+.hero-img-wrap {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-img {
+  width: 120px;
+  height: 80px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(56,142,60,0.10);
+  background: #fff;
+}
+
+.card-deco-img {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .hero-flex {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+  .hero-img {
+    width: 90px;
+    height: 60px;
+  }
+}
 /* styles.css for Dheeraj Krishna Enterprises - Seeds Shop */
 :root {
   --primary-green: #388e3c;
