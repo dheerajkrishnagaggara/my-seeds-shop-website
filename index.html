@@ -9,21 +9,32 @@
     <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
-    <nav id="navbar">
-        <div class="nav-brand">Dheeraj Krishna Enterprises</div>
-        <button id="lang-toggle" aria-label="Switch language">తెలుగు</button>
-        <ul class="nav-links">
-            <li><a href="#home" class="scroll">Home</a></li>
-            <li><a href="#offer" class="scroll">What We Offer</a></li>
-            <li><a href="#why" class="scroll">Why We Are No.1</a></li>
-            <li><a href="#guidance" class="scroll">Crop & Soil Guidance</a></li>
-            <li><a href="#field" class="scroll">Field Visit & Support</a></li>
-            <li><a href="#order" class="scroll">Place Order</a></li>
-            <li><a href="#contact" class="scroll">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="home" class="section">
+        <!-- Language Selection Modal -->
+        <div id="lang-modal" class="modal-overlay" style="display:none;">
+            <div class="modal-content">
+                <h2>Welcome! / స్వాగతం!</h2>
+                <p>Please choose your language to continue<br>దయచేసి మీ భాషను ఎంచుకోండి</p>
+                <div class="modal-btns">
+                    <button id="modal-en" class="modal-btn">Proceed with English</button>
+                    <button id="modal-te" class="modal-btn">తెలుగులో కొనసాగించండి</button>
+                </div>
+            </div>
+        </div>
+        <nav id="navbar" class="modern-navbar">
+            <div class="nav-brand">Dheeraj Krishna Enterprises</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="scroll">Home</a></li>
+                <li><a href="#offer" class="scroll">What We Offer</a></li>
+                <li><a href="#why" class="scroll">Why We Are No.1</a></li>
+                <li><a href="#guidance" class="scroll">Crop & Soil Guidance</a></li>
+                <li><a href="#field" class="scroll">Field Visit & Support</a></li>
+                <li><a href="#order" class="scroll">Place Order</a></li>
+                <li><a href="#contact" class="scroll">Contact</a></li>
+            </ul>
+            <button id="lang-toggle" aria-label="Switch language">తెలుగు</button>
+        </nav>
+        <main class="main-content">
+        <section id="home" class="section card">
             <h1 class="en">Welcome to Dheeraj Krishna Enterprises</h1>
             <h1 class="te">ధీరజ్ కృష్ణ ఎంటర్‌ప్రైజెస్‌కు స్వాగతం</h1>
             <p class="en">Your trusted seeds shop and farmer support partner in G Konduru, Vijayawada. We help you grow better crops with the right seeds and expert guidance.</p>
@@ -33,7 +44,7 @@
                 <a href="https://wa.me/919000000000" class="btn whatsapp">WhatsApp Order</a>
             </div>
         </section>
-        <section id="offer" class="section">
+        <section id="offer" class="section card">
             <h2 class="en">What We Offer</h2>
             <h2 class="te">మేము అందించే సేవలు</h2>
             <ul class="en">
@@ -49,7 +60,7 @@
                 <li>ప్రతి రైతుకు వ్యక్తిగత మార్గదర్శనం</li>
             </ul>
         </section>
-        <section id="why" class="section">
+        <section id="why" class="section card">
             <h2 class="en">Why We Are No.1</h2>
             <h2 class="te">మేమే నెం.1 ఎందుకు?</h2>
             <ul class="en">
@@ -65,19 +76,19 @@
                 <li>త్వరిత స్పందన, ఫీల్డ్ సపోర్ట్</li>
             </ul>
         </section>
-        <section id="guidance" class="section">
+        <section id="guidance" class="section card">
             <h2 class="en">Crop & Soil Guidance</h2>
             <h2 class="te">పంట & నేల మార్గదర్శనం</h2>
             <p class="en">Bring a small soil sample – we suggest the best crops for your land. Our advice is always practical and local.</p>
             <p class="te">మీరు చిన్న నేల నమూనా తీసుకురండి – మీ భూమికి అనువైన పంటలు మేము సూచిస్తాం. మా సలహా ప్రాక్టికల్ & స్థానికంగా ఉంటుంది.</p>
         </section>
-        <section id="field" class="section">
+        <section id="field" class="section card">
             <h2 class="en">Field Visit & Support</h2>
             <h2 class="te">ఫీల్డ్ విజిట్ & సహాయం</h2>
             <p class="en">We guarantee a field visit for every farmer who needs support. Our team will visit your farm and guide you personally.</p>
             <p class="te">ప్రతి రైతుకు అవసరమైనప్పుడు మా టీమ్ మీ పొలానికి వచ్చి ప్రత్యక్షంగా సహాయం చేస్తుంది.</p>
         </section>
-        <section id="order" class="section">
+        <section id="order" class="section card">
             <h2 class="en">Place Order</h2>
             <h2 class="te">ఆర్డర్ చేయండి</h2>
             <p class="en">Call or WhatsApp us to place your order. We deliver seeds and advice quickly.</p>
@@ -87,7 +98,7 @@
                 <a href="https://wa.me/919000000000" class="btn whatsapp">WhatsApp Order</a>
             </div>
         </section>
-        <section id="contact" class="section">
+        <section id="contact" class="section card">
             <h2 class="en">Contact & Address</h2>
             <h2 class="te">సంప్రదించండి & చిరునామా</h2>
             <p class="en"><strong>Address:</strong> Dheeraj Krishna Enterprises, Main Road, G Konduru, Vijayawada, Andhra Pradesh 521229</p>
@@ -99,7 +110,7 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <p class="en">&copy; 2026 Dheeraj Krishna Enterprises. All rights reserved.</p>
         <p class="te">&copy; 2026 ధీరజ్ కృష్ణ ఎంటర్‌ప్రైజెస్. అన్ని హక్కులు పరిరక్షించబడ్డాయి.</p>
     </footer>

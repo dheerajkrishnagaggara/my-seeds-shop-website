@@ -3,11 +3,13 @@
   --primary-green: #388e3c;
   --secondary-green: #66bb6a;
   --accent-yellow: #ffd600;
-  --background: #f9fff6;
+  --background: linear-gradient(135deg, #f9fff6 0%, #e8f5e9 100%);
+  --card-bg: #fff;
+  --card-shadow: 0 4px 24px rgba(56,142,60,0.10);
   --text-dark: #222;
   --text-light: #fff;
   --telugu-font: 'Noto Sans Telugu', 'Vani', 'Gautami', sans-serif;
-}
+  --footer-bg: #e8f5e9;
 
 body {
   margin: 0;
@@ -36,6 +38,56 @@ header {
 
 .navbar .logo {
   font-size: 1.3rem;
+.modern-navbar {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(90deg, #388e3c 60%, #66bb6a 100%);
+  color: var(--text-light);
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(56,142,60,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem;
+}
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--accent-yellow);
+  text-shadow: 0 2px 8px rgba(56,142,60,0.10);
+}
+.nav-links {
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a.active, .nav-links a:hover {
+  background: var(--accent-yellow);
+  color: var(--primary-green);
+}
+#lang-toggle {
+  background: var(--accent-yellow);
+  color: var(--primary-green);
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  margin-left: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -81,6 +133,8 @@ h1, h2, h3 {
   color: var(--primary-green);
   margin-top: 0;
   font-family: inherit;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.7rem;
 }
 
 .cta-buttons {
@@ -143,7 +197,76 @@ h1, h2, h3 {
 }
 
 /* Accessibility: High contrast for buttons */
-.cta-btn:focus, .lang-toggle:focus {
+/* Accessibility: High contrast for buttons */
+.btn:focus, #lang-toggle:focus, .modal-btn:focus {
   outline: 2px solid var(--accent-yellow);
   outline-offset: 2px;
+}
+
+/* Modal Overlay Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(34, 51, 34, 0.85);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(56,142,60,0.18);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  max-width: 340px;
+  width: 90vw;
+  animation: popIn 0.5s;
+}
+.modal-content h2 {
+  margin-top: 0;
+  color: var(--primary-green);
+}
+.modal-btns {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.modal-btn {
+  background: var(--primary-green);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.1s;
+}
+.modal-btn:hover {
+  background: var(--secondary-green);
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Footer */
+.footer {
+  background: var(--footer-bg);
+  color: var(--primary-green);
+  text-align: center;
+  padding: 1.2rem 0 0.7rem 0;
+  font-size: 1rem;
+  margin-top: 2rem;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -2px 12px rgba(56,142,60,0.08);
+}
 }

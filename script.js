@@ -1,5 +1,16 @@
 // script.js for Dheeraj Krishna Enterprises - Seeds Shop
 
+// --- Language Modal Logic ---
+function showLangModal() {
+  document.getElementById('lang-modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function hideLangModal() {
+  document.getElementById('lang-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// --- Content Data ---
 const content = {
   en: {
     nav: [
@@ -97,51 +108,49 @@ const content = {
   }
 };
 
+
 let currentLang = 'en';
 
-function setLang(lang) {
+function setLang(lang, animate = true) {
   currentLang = lang;
-  const c = content[lang];
-  // Nav
-  document.querySelectorAll('.nav-link').forEach((el, i) => {
-    el.textContent = c.nav[i];
+  // Hide/show .en and .te elements
+  document.querySelectorAll('.en').forEach(el => {
+    if (lang === 'en') {
+      if (animate) { fadeIn(el); } else { el.style.display = ''; }
+    } else {
+      el.style.display = 'none';
+    }
   });
-  // Sections
-  document.getElementById('home-title').textContent = c.homeTitle;
-  document.getElementById('home-desc').textContent = c.homeDesc;
-  document.getElementById('offer-title').textContent = c.offerTitle;
-  setList('offer-list', c.offerList);
-  document.getElementById('why-title').textContent = c.whyTitle;
-  setList('why-list', c.whyList);
-  document.getElementById('guidance-title').textContent = c.guidanceTitle;
-  document.getElementById('guidance-desc').textContent = c.guidanceDesc;
-  document.getElementById('field-title').textContent = c.fieldTitle;
-  document.getElementById('field-desc').textContent = c.fieldDesc;
-  document.getElementById('order-title').textContent = c.orderTitle;
-  document.getElementById('order-desc').textContent = c.orderDesc;
-  document.getElementById('contact-title').textContent = c.contactTitle;
-  setList('contact-details', c.contactDetails);
-  document.getElementById('call-btn').textContent = c.callNow;
-  document.getElementById('whatsapp-btn').textContent = c.whatsapp;
-  document.getElementById('map-label').textContent = c.mapLabel;
-  document.getElementById('address').textContent = c.address;
+  document.querySelectorAll('.te').forEach(el => {
+    if (lang === 'te') {
+      if (animate) { fadeIn(el); } else { el.style.display = ''; }
+    } else {
+      el.style.display = 'none';
+    }
+  });
+  // Update nav button
+  document.getElementById('lang-toggle').textContent = lang === 'en' ? 'తెలుగు' : 'EN';
   // Font for Telugu
   document.body.style.fontFamily = lang === 'te' ? `var(--telugu-font), 'Segoe UI', Arial, sans-serif` : `'Segoe UI', Arial, var(--telugu-font)`;
+  // Store in localStorage
+  localStorage.setItem('dke-lang', lang);
 }
 
-function setList(id, arr) {
-  const ul = document.getElementById(id);
-  ul.innerHTML = '';
-  arr.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    ul.appendChild(li);
-  });
+function fadeIn(el) {
+  el.style.opacity = 0;
+  el.style.display = '';
+  setTimeout(() => {
+    el.style.transition = 'opacity 0.4s';
+    el.style.opacity = 1;
+    setTimeout(() => {
+      el.style.transition = '';
+    }, 400);
+  }, 10);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   // Nav scroll
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.scroll').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const target = document.getElementById(link.getAttribute('href').substring(1));
@@ -151,19 +160,27 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth'
         });
       }
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.scroll').forEach(l => l.classList.remove('active'));
       link.classList.add('active');
     });
   });
   // Language toggle
-  document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
-  document.getElementById('lang-te').addEventListener('click', () => setLang('te'));
-  // CTA buttons
-  document.getElementById('call-btn').addEventListener('click', () => {
-    window.open('tel:+919876543210');
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    setLang(currentLang === 'en' ? 'te' : 'en');
   });
-  document.getElementById('whatsapp-btn').addEventListener('click', () => {
-    window.open('https://wa.me/919876543210');
-  });
-  setLang('en');
+  // Modal logic
+  const storedLang = localStorage.getItem('dke-lang');
+  if (!storedLang) {
+    showLangModal();
+    document.getElementById('modal-en').onclick = () => {
+      setLang('en', false);
+      hideLangModal();
+    };
+    document.getElementById('modal-te').onclick = () => {
+      setLang('te', false);
+      hideLangModal();
+    };
+  } else {
+    setLang(storedLang, false);
+  }
 });
