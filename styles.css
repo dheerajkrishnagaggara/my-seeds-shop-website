@@ -1,0 +1,149 @@
+/* styles.css for Dheeraj Krishna Enterprises - Seeds Shop */
+:root {
+  --primary-green: #388e3c;
+  --secondary-green: #66bb6a;
+  --accent-yellow: #ffd600;
+  --background: #f9fff6;
+  --text-dark: #222;
+  --text-light: #fff;
+  --telugu-font: 'Noto Sans Telugu', 'Vani', 'Gautami', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, var(--telugu-font);
+  background: var(--background);
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: var(--primary-green);
+  color: var(--text-light);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.08);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+}
+
+.navbar .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navbar nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.navbar nav a.active, .navbar nav a:hover {
+  background: var(--secondary-green);
+}
+
+.lang-toggle {
+  background: var(--accent-yellow);
+  color: var(--primary-green);
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+section {
+  padding: 2.2rem 1rem 1.5rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: var(--primary-green);
+  margin-top: 0;
+  font-family: inherit;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 1.2rem 0 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  background: var(--secondary-green);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(56,142,60,0.08);
+  transition: background 0.2s, transform 0.1s;
+  min-width: 120px;
+}
+
+.cta-btn.call {
+  background: var(--primary-green);
+}
+
+.cta-btn.whatsapp {
+  background: #25d366;
+}
+
+.cta-btn:active {
+  transform: scale(0.97);
+}
+
+.map-embed {
+  width: 100%;
+  height: 220px;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.08);
+}
+
+@media (max-width: 600px) {
+  .navbar nav {
+    gap: 0.7rem;
+  }
+  section {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  .cta-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    min-width: 100px;
+  }
+  .map-embed {
+    height: 160px;
+  }
+}
+
+/* Accessibility: High contrast for buttons */
+.cta-btn:focus, .lang-toggle:focus {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+}
